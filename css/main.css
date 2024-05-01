@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 62.5%;
+
+    --text-white: #ffffff;
+    --text-gray-500: #ccccce;
+    --text-gray-800: #4E5455;
+    --text-red-500: #f75a68;
+    --text-red-800: #fd3243;
+    --text-ocean: #065E7C;
+
+    --bg-black: #000000;
+    --bg-ocean-300: #06181C75;
+    --bg-ocean-500: #06181C;
+    --bg-ocean-800: #092D38;
+    --bg-button-ocean: #065E7C;
+    --bg-button-white: #ffffff;
+
+    --stroke-ocean-500: #4A808C;
+    --stroke-ocean-800: #1d4e58;
+}
+
+body,
+form,
+input,
+button {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    color: var(--text-white);
+    height: 100vh;
+    padding: 6.4rem 3.2rem;
+    background-color: var(--bg-black);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 112rem;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3.2rem;
+    margin-bottom: 6.4rem;
+}
+
+header .add-user {
+    width: min(60rem, 100%);
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.add-user input {
+    width: 100%;
+    height: 4.8rem;
+    padding: 1.6rem;
+    border: none;
+    border-radius: .8rem;
+    background-color: var(--bg-ocean-500);
+
+    color: var(--text-gray-500);
+}
+
+.add-user button {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding: 1.2rem 3.2rem;
+    border: none;
+    border-radius: .8rem;
+    background-color: var(--bg-button-ocean);
+
+    color: var(--text-white);
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1;
+
+    transition: all .3s;
+
+    cursor: pointer;
+}
+
+.add-user button .star {
+    fill: var(--text-white);
+}
+
+.add-user button:hover {
+    color: var(--text-ocean);
+    background-color: var(--bg-button-white);
+}
+
+.add-user button:hover .star {
+    fill: var(--text-ocean);
+}
+
+.favorites {
+    height: 58rem;
+    border: 2px solid var(--stroke-ocean-500);
+    border-radius: 1.2rem;
+    clip-path: stroke-box;
+
+    overflow: auto;
+}
+
+::-webkit-scrollbar{
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb{
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--stroke-ocean-500);
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+}
+
+.favorites table {
+    width: 100%;
+    border-collapse: collapse;
+
+    text-align: left;
+}
+
+thead tr th {
+    font-size: 2rem;
+    font-weight: 500;
+
+    background-color: var(--bg-ocean-800);
+    padding: 1.6rem 3.2rem;
+}
+
+tbody tr {
+    border-top: 1px solid var(--stroke-ocean-500);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--bg-ocean-300);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--bg-ocean-500);
+}
+
+tbody td {
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 2.4rem 3.2rem;
+}
+
+tbody .user {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+tbody .user .name {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+tbody .user .path {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--text-gray-500);
+    text-decoration: none;
+}
+
+tbody .user .path:hover{
+    color: var(--text-white);
+}
+
+tbody .user img {
+    width: 56px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+tbody .action button {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text-red-500);
+
+    background: none;
+    border: 0;
+    padding: 0;
+
+    cursor: pointer;
+
+    transition: color .3s;
+}
+
+tbody .action button:hover {
+    color: var(--text-red-800);
+}
+
+.no-favorites{
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.no-favorites span{
+    color: var(--text-gray-800);
+    font-size: 2.6rem;
+    font-weight: bold;
+}
+
+.hide{
+    display: none;
+}
